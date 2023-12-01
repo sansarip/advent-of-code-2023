@@ -1,0 +1,12 @@
+image:
+  file: .gitpod.dockerfile
+vscode:
+  extensions:
+    - betterthantomorrow.calva
+github:
+  prebuilds:
+    main: true
+    branches: false
+    pullRequests: true
+    addCheck: true
+    addComment: true
