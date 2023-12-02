@@ -31,7 +31,7 @@
 (defn line->first-and-last-numbers [line]
   (let [first-number (some utils/parse-int (replace-first-spelled-num line))
         last-number (some utils/parse-int (replace-first-spelled-num (utils/reverse-str line) :reverse))]
-    [first-number last-number]))
+    (str first-number last-number )))
 
 (defn parse-input [input]
   (let [lines (str/split input #"\n")]

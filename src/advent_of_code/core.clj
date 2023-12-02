@@ -1,5 +1,6 @@
 (ns advent-of-code.core
-  (:require [advent-of-code.day1.core :as day1]))
+  (:require [advent-of-code.day1.core :as day1]
+            [advent-of-code.day2.core :as day2]))
 
 (defn print-banner [text]
   (println (str "================================================================================\n"
@@ -14,6 +15,6 @@
       (swap! count inc)))
   (println "\n"))
 
-(def day-1-input-path "src/advent_of_code/day1/input.txt")
 
-(print-solution 1 (day1/solve-part-1 day-1-input-path) (day1/solve-part-2 day-1-input-path))
+(print-solution 1 (day1/solve-part-1) (day1/solve-part-2))
+(print-solution 2 (day2/solve-part-1) (day2/solve-part-2))

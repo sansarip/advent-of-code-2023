@@ -1,5 +1,4 @@
-(ns advent-of-code.day1.utils
-  (:require [clojure.string :as str]))
+(ns advent-of-code.day1.utils)
 
 (defn reverse-str [s]
   (apply str (reverse s)))
@@ -8,5 +7,5 @@
   (try (Integer/parseInt (str c))
        (catch Exception _)))
 
-(defn sum-tuples [tuples]
-  (apply + (map (comp parse-int str/join) tuples)))
+(defn sum-tuples [str-nums]
+  (apply + (map parse-int str-nums)))

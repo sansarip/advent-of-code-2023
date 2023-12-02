@@ -5,7 +5,7 @@
 (defn line->first-and-last-numbers [line]
   (let [first-number (some utils/parse-int line)
         last-number (some utils/parse-int (utils/reverse-str line))]
-    [first-number last-number]))
+    (str first-number last-number)))
 
 (defn parse-input [input]
   (let [lines (str/split input #"\n")]
