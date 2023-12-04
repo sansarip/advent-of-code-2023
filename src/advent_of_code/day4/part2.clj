@@ -9,18 +9,18 @@
 
 (defn copy-cards [wins-per-game]
   (loop [idx 0
-         num-cards-vec (into [] (repeat (count wins-per-game) 1))]
-    (let [wins (get wins-per-game idx)
-          current-num-copies (get num-cards-vec idx)
+         card-copies (into [] (repeat (count wins-per-game) 1))]
+    (let [current-wins (get wins-per-game idx)
+          current-num-copies (get card-copies idx)
           next-idx (inc idx)
-          next-end (+ next-idx wins)]
+          next-end (+ next-idx current-wins)]
       (cond
-        (= next-idx (count wins-per-game)) num-cards-vec 
-        (zero? wins) (recur next-idx num-cards-vec)
+        (= next-idx (count wins-per-game)) card-copies 
+        (zero? current-wins) (recur next-idx card-copies)
         :else (recur next-idx 
                      (replace-vec 
-                      num-cards-vec
-                      (map #(+ % current-num-copies) (subvec num-cards-vec next-idx next-end))
+                      card-copies
+                      (map #(+ % current-num-copies) (subvec card-copies next-idx next-end))
                       next-idx
                       next-end))))))
 
