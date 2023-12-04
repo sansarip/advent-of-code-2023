@@ -10,7 +10,7 @@
 (defn copy-cards [wins-per-game]
   (loop [idx 0
          num-cards-vec (into [] (repeat (count wins-per-game) 1))]
-    (let [wins (wins-per-game idx)
+    (let [wins (get wins-per-game idx)
           current-num-copies (get num-cards-vec idx)
           next-idx (inc idx)
           next-end (+ next-idx wins)]
